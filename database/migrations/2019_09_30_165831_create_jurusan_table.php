@@ -27,7 +27,7 @@ class CreateJurusanTable extends Migration
 			$table->string('level_bidang_id', 5);
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('jurusan_id');
 			$table->foreign('jurusan_induk')->references('jurusan_id')->on('ref.jurusan')
 				->onUpdate('CASCADE')->onDelete('CASCADE');

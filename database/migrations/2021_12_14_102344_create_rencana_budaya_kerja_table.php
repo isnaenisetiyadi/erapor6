@@ -20,7 +20,7 @@ class CreateRencanaBudayaKerjaTable extends Migration
             $table->string('nama');
             $table->string('deskripsi');
             $table->timestamps();
-            $table->timestamp('last_sync');
+            $table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('rencana_budaya_kerja_id');
             $table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->foreign('rombongan_belajar_id')->references('rombongan_belajar_id')->on('rombongan_belajar')->onUpdate('CASCADE')->onDelete('CASCADE');

@@ -40,7 +40,7 @@ class CreateGuruTable extends Migration
 			$table->integer('guru_id_erapor')->nullable();
 			$table->integer('is_dapodik')->default('0');
 			$table->uuid('guru_id_migrasi')->nullable();
-			$table->timestamps();
+			$table->timestamps()->nullable()->default(null);
 			$table->softDeletes();
 			$table->timestamp('last_sync');
             $table->primary('guru_id');

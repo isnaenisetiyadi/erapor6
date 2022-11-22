@@ -21,7 +21,7 @@ class CreateCapaianPembelajaranTable extends Migration
             $table->text('deskripsi');
             $table->decimal('aktif', 1, 0)->default(1);
             $table->timestamps();
-            $table->timestamp('last_sync');
+            $table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('cp_id');
             $table->foreign('mata_pelajaran_id')->references('mata_pelajaran_id')->on('ref.mata_pelajaran')->onUpdate('CASCADE')->onDelete('CASCADE');
         });

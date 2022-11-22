@@ -18,7 +18,7 @@ class CreatePekerjaanTable extends Migration
 			$table->string('nama', 25);
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('pekerjaan_id');
         });
     }

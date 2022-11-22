@@ -22,7 +22,7 @@ class CreateDeskripsiMataPelajaranTable extends Migration
 			$table->text('deskripsi_keterampilan')->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('deskripsi_mata_pelajaran_id');
 			$table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');

@@ -18,7 +18,7 @@ class CreateRefBudayaKerjaTable extends Migration
             $table->string('aspek');
             $table->timestamps();
             $table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('budaya_kerja_id');
         });
     }

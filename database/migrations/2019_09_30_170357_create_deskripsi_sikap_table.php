@@ -21,7 +21,7 @@ class CreateDeskripsiSikapTable extends Migration
 			$table->text('uraian_deskripsi_sosial')->nullable();
 			$table->string('predikat_spiritual', 3)->nullable();
 			$table->string('predikat_sosial', 3)->nullable();
-			$table->timestamps();
+			$table->timestamps()->nullable()->default(null);
 			$table->softDeletes();
 			$table->timestamp('last_sync');
 			$table->primary('deskripsi_sikap_id');

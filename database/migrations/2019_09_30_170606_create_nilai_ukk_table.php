@@ -22,7 +22,7 @@ class CreateNilaiUkkTable extends Migration
 			$table->integer('nilai');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('rencana_ukk_id')->references('rencana_ukk_id')->on('rencana_ukk')

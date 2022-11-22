@@ -28,7 +28,7 @@ class CreateJenisPtkTable extends Migration
 			$table->decimal('formal', 1, 0);
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('jenis_ptk_id');
         });
     }

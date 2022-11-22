@@ -20,7 +20,7 @@ class CreateSikapTable extends Migration
 			$table->integer('sikap_id_migrasi')->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->foreign('sikap_induk')->references('sikap_id')->on('ref.sikap')->onUpdate('NO ACTION')->onDelete('NO ACTION');
         });
     }

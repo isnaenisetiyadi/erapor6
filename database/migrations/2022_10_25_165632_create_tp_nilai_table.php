@@ -22,7 +22,7 @@ class CreateTpNilaiTable extends Migration
 			$table->uuid('tp_id');
             $table->decimal('kompeten', 1, 0);
 			$table->timestamps();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('tp_nilai_id');
 			$table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('rencana_penilaian_id')->references('rencana_penilaian_id')->on('rencana_penilaian')->onUpdate('CASCADE')->onDelete('CASCADE');

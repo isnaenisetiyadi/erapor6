@@ -19,7 +19,7 @@ class CreateAspekBudayaKerjaTable extends Migration
             $table->uuid('rencana_budaya_kerja_id');
             $table->smallInteger('budaya_kerja_id');
             $table->timestamps();
-            $table->timestamp('last_sync');
+            $table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('aspek_budaya_kerja_id');
             $table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->foreign('rencana_budaya_kerja_id')->references('rencana_budaya_kerja_id')->on('rencana_budaya_kerja')->onUpdate('CASCADE')->onDelete('CASCADE');

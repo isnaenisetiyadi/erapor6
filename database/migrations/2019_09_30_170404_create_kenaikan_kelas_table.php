@@ -21,7 +21,7 @@ class CreateKenaikanKelasTable extends Migration
 			$table->integer('status')->default('2');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('kenaikan_kelas_id');
 			$table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');

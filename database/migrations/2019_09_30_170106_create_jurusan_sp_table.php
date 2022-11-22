@@ -21,7 +21,7 @@ class CreateJurusanSpTable extends Migration
 			$table->string('nama_jurusan_sp');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('jurusan_sp_id');
 			$table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')
 				->onUpdate('CASCADE')->onDelete('CASCADE');

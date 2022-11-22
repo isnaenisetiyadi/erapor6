@@ -22,7 +22,7 @@ class CreateJabatanPtkTable extends Migration
             $table->decimal('harus_refer_unit_org', 1, 0)->default(0);
             $table->timestamps();
             $table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('jabatan_ptk_id');
         });
     }

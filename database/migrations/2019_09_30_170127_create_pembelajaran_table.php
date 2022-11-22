@@ -32,7 +32,7 @@ class CreatePembelajaranTable extends Migration
 			$table->uuid('pembelajaran_id_migrasi')->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('mata_pelajaran_id')->references('mata_pelajaran_id')->on('ref.mata_pelajaran')

@@ -23,7 +23,7 @@ class CreateMataPelajaranTable extends Migration
 			$table->string('jurusan_id', 25)->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->foreign('jurusan_id')->references('jurusan_id')->on('ref.jurusan')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->primary('mata_pelajaran_id');

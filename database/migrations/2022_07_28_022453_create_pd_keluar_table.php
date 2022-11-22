@@ -19,7 +19,7 @@ class CreatePdKeluarTable extends Migration
             $table->uuid('sekolah_id');
             $table->string('semester_id', 5);
             $table->timestamps();
-            $table->timestamp('last_sync');
+            $table->timestamp('last_sync')->nullable()->default(null);
             $table->foreign('peserta_didik_id')->references('peserta_didik_id')->on('peserta_didik')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->foreign('semester_id')->references('semester_id')->on('ref.semester')->onUpdate('CASCADE')->onDelete('CASCADE');

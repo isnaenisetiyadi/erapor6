@@ -23,7 +23,7 @@ class CreateNilaiTable extends Migration
 			$table->string('rerata', 10);
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('nilai_id');
 			$table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');

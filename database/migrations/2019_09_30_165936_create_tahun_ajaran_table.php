@@ -20,7 +20,7 @@ class CreateTahunAjaranTable extends Migration
 			$table->date('tanggal_mulai');
 			$table->date('tanggal_selesai');
 			$table->timestamps();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('tahun_ajaran_id');
         });
     }

@@ -52,7 +52,7 @@ class CreatePesertaDidikTable extends Migration
 			$table->uuid('peserta_didik_id_migrasi')->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->foreign('kode_wilayah')->references('kode_wilayah')->on('ref.mst_wilayah')
 				->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('kerja_ayah')->references('pekerjaan_id')->on('ref.pekerjaan')

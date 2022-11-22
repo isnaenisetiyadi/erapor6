@@ -35,7 +35,7 @@ class CreateSekolahTable extends Migration
 			$table->integer('status_sekolah');
 			$table->integer('sinkron')->default(0);
 			$table->string('logo_sekolah')->nullable();
-			$table->timestamps();
+			$table->timestamps()->nullable()->default(null);
 			$table->softDeletes();
 			$table->timestamp('last_sync');
             $table->primary('sekolah_id');

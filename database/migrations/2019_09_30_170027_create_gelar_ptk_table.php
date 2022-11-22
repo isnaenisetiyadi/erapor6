@@ -21,7 +21,7 @@ class CreateGelarPtkTable extends Migration
 			$table->uuid('ptk_id');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('guru_id')->references('guru_id')->on('guru')

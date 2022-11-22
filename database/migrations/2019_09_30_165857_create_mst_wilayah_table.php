@@ -18,7 +18,7 @@ class CreateMstWilayahTable extends Migration
 			$table->string('level_wilayah', 15);
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('id_level_wilayah');
         });
 		Schema::create('ref.negara', function (Blueprint $table) {

@@ -19,7 +19,7 @@ class CreateKelompokTable extends Migration
 			$table->integer('kurikulum');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
         });
     }
 

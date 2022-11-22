@@ -21,7 +21,7 @@ class CreateNilaiUsTable extends Migration
 			$table->integer('nilai')->default('0')->nullable();
             $table->timestamps();
             $table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('nilai_us_id');
             $table->index('sekolah_id');
 			$table->index('pembelajaran_id');

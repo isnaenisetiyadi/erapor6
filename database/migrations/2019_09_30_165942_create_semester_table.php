@@ -22,7 +22,7 @@ class CreateSemesterTable extends Migration
 			$table->date('tanggal_mulai');
 			$table->date('tanggal_selesai');
 			$table->timestamps();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('semester_id');
 			$table->foreign('tahun_ajaran_id')->references('tahun_ajaran_id')->on('ref.tahun_ajaran')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');

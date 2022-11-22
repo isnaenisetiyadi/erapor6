@@ -20,7 +20,7 @@ class CreateCatatanBudayaKerjaTable extends Migration
             $table->text('catatan');
             $table->timestamps();
             $table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('catatan_budaya_kerja_id');
             $table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->foreign('anggota_rombel_id')->references('anggota_rombel_id')->on('anggota_rombel')->onUpdate('CASCADE')->onDelete('CASCADE');

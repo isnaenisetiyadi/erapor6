@@ -18,7 +18,7 @@ class CreateTujuanPembelajaranTable extends Migration
             $table->bigInteger('cp_id');
             $table->text('deskripsi');
             $table->timestamps();
-            $table->timestamp('last_sync');
+            $table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('tp_id');
             $table->foreign('cp_id')->references('cp_id')->on('ref.capaian_pembelajaran')->onUpdate('CASCADE')->onDelete('CASCADE');
         });

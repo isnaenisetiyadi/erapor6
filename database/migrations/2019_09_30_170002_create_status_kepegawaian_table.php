@@ -18,7 +18,7 @@ class CreateStatusKepegawaianTable extends Migration
 			$table->string('nama', 30);
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('status_kepegawaian_id');
         });
     }

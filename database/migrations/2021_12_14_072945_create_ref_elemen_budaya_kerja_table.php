@@ -20,7 +20,7 @@ class CreateRefElemenBudayaKerjaTable extends Migration
             $table->text('deskripsi');
             $table->timestamps();
             $table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('elemen_id');
             $table->foreign('budaya_kerja_id')->references('budaya_kerja_id')->on('ref.budaya_kerja')->onUpdate('CASCADE')->onDelete('CASCADE');
         });

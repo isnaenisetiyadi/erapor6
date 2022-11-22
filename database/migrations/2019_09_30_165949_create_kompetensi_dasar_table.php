@@ -30,7 +30,7 @@ class CreateKompetensiDasarTable extends Migration
 			$table->integer('kurikulum')->default('0')->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('kompetensi_dasar_id');
 			$table->foreign('mata_pelajaran_id')->references('mata_pelajaran_id')->on('ref.mata_pelajaran')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');

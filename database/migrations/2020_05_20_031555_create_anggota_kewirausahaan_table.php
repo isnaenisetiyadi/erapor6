@@ -18,7 +18,7 @@ class CreateAnggotaKewirausahaanTable extends Migration
             $table->uuid('kewirausahaan_id');
 			$table->uuid('anggota_rombel_id');
             $table->timestamps();
-            $table->timestamp('last_sync');
+            $table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('anggota_kewirausahaan_id');
             $table->index('kewirausahaan_id');
             $table->index('anggota_rombel_id');

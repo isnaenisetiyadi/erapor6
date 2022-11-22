@@ -21,7 +21,7 @@ class CreateRefOpsiBudayaKerja extends Migration
             $table->string('warna', 10);
             $table->timestamps();
             $table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('opsi_id');
         });
     }

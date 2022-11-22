@@ -20,7 +20,7 @@ class CreateGelarAkademikTable extends Migration
 			$table->decimal('posisi_gelar', 1, 0);
             $table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
         });
     }
 

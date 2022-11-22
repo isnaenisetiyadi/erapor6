@@ -20,7 +20,7 @@ class CreateCatatanWaliTable extends Migration
 			$table->text('uraian_deskripsi');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('catatan_wali_id');
 			$table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');

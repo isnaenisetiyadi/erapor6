@@ -20,7 +20,7 @@ class CreateNilaiSumatifTable extends Migration
 			$table->uuid('anggota_rombel_id');
 			$table->integer('nilai');
 			$table->timestamps();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->primary('nilai_sumatif_id');
 			$table->foreign('sekolah_id')->references('sekolah_id')->on('sekolah')->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('pembelajaran_id')->references('pembelajaran_id')->on('pembelajaran')->onUpdate('CASCADE')->onDelete('CASCADE');

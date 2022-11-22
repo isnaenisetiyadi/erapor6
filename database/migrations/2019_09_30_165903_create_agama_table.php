@@ -18,7 +18,7 @@ class CreateAgamaTable extends Migration
 			$table->string('nama');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
         });
     }
 

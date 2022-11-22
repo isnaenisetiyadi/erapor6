@@ -26,7 +26,7 @@ class CreateMataPelajaranKurikulumTable extends Migration
 			$table->string('gmp_id', 36)->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
 			$table->foreign('kurikulum_id')->references('kurikulum_id')->on('ref.kurikulum')
                 ->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('mata_pelajaran_id')->references('mata_pelajaran_id')->on('ref.mata_pelajaran')

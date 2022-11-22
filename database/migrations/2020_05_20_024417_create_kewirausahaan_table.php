@@ -22,7 +22,7 @@ class CreateKewirausahaanTable extends Migration
 			$table->string('nama_produk');
             $table->timestamps();
             $table->softDeletes();
-			$table->timestamp('last_sync');
+			$table->timestamp('last_sync')->nullable()->default(null);
             $table->primary('kewirausahaan_id');
             $table->index('sekolah_id');
 			$table->index('anggota_rombel_id');
