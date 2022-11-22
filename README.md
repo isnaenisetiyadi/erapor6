@@ -28,7 +28,7 @@ XML PHP Extension
 
 - Clone Repositori ini
 ```bash
-git clone --depth=1 https://github.com/eraporsmk/erapor6.git dataweb
+git clone --depth=1 https://github.com/isnaenisetiyadi/erapor6.git dataweb
 cd dataweb
 ```
 
